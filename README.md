@@ -19,5 +19,68 @@ This is a Shell script which will help you to know when a slot is available on C
 <br />File will be saved with following naming convention - ```<district_id>-<min_age>-<custom_date>.log```
 <br />Example: ```664-45-05-05-2021.log```
 
+<br />Output Sample -
+
+```
+          Center ID:      611574
+          Name:           CVC 1 UHM HOSPITAL CV
+          Address:        MALL ROAD
+          District:       Kanpur Nagar
+          State:          Uttar Pradesh
+          Block:          KPM
+          Pin Code:       208001
+          Fees:           Free
+          Available:      137
+          Min Age Limit:  45
+          Vaccine Name:   COVISHIELD
+          Date:           05-05-2021
+          Time:           [
+                              "10:00AM-12:00PM",
+                              "12:00PM-02:00PM",
+                              "02:00PM-04:00PM",
+                              "04:00PM-05:00PM"
+                          ]
+
+
+          Center ID:      660774
+          Name:           CVC 1 Armapur Hospital CV
+          Address:        Armapur
+          District:       Kanpur Nagar
+          State:          Uttar Pradesh
+          Block:          Geeta Nagar
+          Pin Code:       208002
+          Fees:           Free
+          Available:      37
+          Min Age Limit:  45
+          Vaccine Name:   COVISHIELD
+          Date:           05-05-2021
+          Time:           [
+                              "09:00AM-11:00AM",
+                              "11:00AM-01:00PM",
+                              "01:00PM-03:00PM",
+                              "03:00PM-05:00PM"
+                          ]
+
+
+          Center ID:      626325
+          Name:           CVC 1 PHC HATHIPUR CV
+          Address:        HATHIPUR
+          District:       Kanpur Nagar
+          State:          Uttar Pradesh
+          Block:          Sarsaul
+          Pin Code:       209402
+          Fees:           Free
+          Available:      57
+          Min Age Limit:  45
+          Vaccine Name:   COVISHIELD
+          Date:           05-05-2021
+          Time:           [
+                              "09:00AM-11:00AM",
+                              "11:00AM-01:00PM",
+                              "01:00PM-03:00PM",
+                              "03:00PM-05:00PM"
+                          ]
+```
+
 ## Reference:
 https://github.com/faizulhai24/cowin-vaccine-slot-checker
