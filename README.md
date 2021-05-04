@@ -11,10 +11,10 @@ This is a Shell script which will help you to know when a slot is available on C
 3. Date Format - DD-MM-YYYY
 4. For District IDs, open [district_ids.md](https://github.com/hiakki/covid_helper/blob/master/district_lists.md)
 <br />Example: 
-<br />```slot_checker.sh 664 18 04-05-2021 Y
-slot_checker.sh 663 45 05-06-2021 y
-slot_checker.sh 664 18 04-05-2021 n
-slot_checker.sh 663 45 05-06-2021 N```
+<br />```slot_checker.sh 664 18 04-05-2021 Y```
+<br />```slot_checker.sh 663 45 05-06-2021 y```
+<br />```slot_checker.sh 664 18 04-05-2021 n```
+<br />```slot_checker.sh 663 45 05-06-2021 N```
 
 <br />File will be saved with following naming convention - ```<district_id>-<min_age>-<custom_date>.log```
 <br />Example: ```664-45-05-05-2021.log```
