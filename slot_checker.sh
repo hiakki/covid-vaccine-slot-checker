@@ -4,7 +4,7 @@ if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]
 then
   echo "Usage: $0 <DISTRICT ID> <MIN AGE> <DATE>"
   echo "Date Format - DD-MM-YYYY"
-  echo "For District IDs, open district_ids.txt"
+  echo "For District IDs, open district_ids.md"
   echo "Example: $0 664 18 04-05-2021"
   exit
 fi
