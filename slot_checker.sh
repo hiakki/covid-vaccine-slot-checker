@@ -1,27 +1,28 @@
 #!/bin/bash
 
-if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]
+if [ -z $1 ] || [ -z $2 ] || [ -z $3 ] || [ -z $4 ]
 then
-  echo "Usage: $0 <DISTRICT ID> <MIN AGE> <DATE>"
+  echo "Usage: $0 <DISTRICT ID> <MIN AGE> <DATE> <O/P to file: Y/y/N/n>"
   echo "Date Format - DD-MM-YYYY"
   echo "For District IDs, open district_ids.md"
-  echo "Example: $0 664 18 04-05-2021"
+  echo -e "Example: 
+            $0 664 18 04-05-2021 Y
+            $0 663 45 05-06-2021 y
+            $0 664 18 04-05-2021 n
+            $0 663 45 05-06-2021 N
+          "
   exit
 fi
-district_ids=$1
+district_id=$1
 min_age=$2
-t_date_raw=$3
-i=1
+custom_date=$3
 j=0
 k=0
+file_name="${district_id}-${min_age}-${custom_date}.log"
 
-t_date=$t_date_raw
-
-for district_id in ${district_ids[@]}
-do
-  url="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=${district_id}&date=${t_date}"
+slot_checker() {
+  url="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=${district_id}&date=${custom_date}"
   centers=`curl -s $url | jq '.centers'`
-  i=$((i+1))
 
   while [ true ]
   do
@@ -45,7 +46,7 @@ do
       availability_date=`echo $center | jq -r '.sessions[0].date'`
       time_slots=`echo $center | jq -r '.sessions[0].slots' | sed 's/ /               /g' | sed 's/]/                          ]/g'`
 
-      if [ "$min_age" = "$min_age_limit" ]
+      if [ "$min_age" = "$min_age_limit" ] && [ "$available_capacity" != 0 ]
       then
         echo -e "
           Center ID:      $center_id
@@ -69,6 +70,19 @@ do
     fi
   done
 
-  echo "$j out of $k Centers are available for District - $district_name"
+  if [ -z "$district_name" ]
+  then
+    echo "No Centers are available for District ID - $district_id for the Date - $custom_date"
+  else
+    echo "$j out of $k Centers are available for District - $district_name"
+  fi
+}
 
-done
+if [ "$4" = 'n' ] || [ "$4" = 'N' ]
+then
+  slot_checker
+elif [ "$4" = 'y' ] || [ "$4" = 'Y' ]
+then
+  slot_checker > $file_name
+  echo "Result is saved to - $file_name"
+fi
