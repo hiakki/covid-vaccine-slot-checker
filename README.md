@@ -16,5 +16,7 @@ This is a Shell script which will help you to know when a slot is available on C
 <br />```slot_checker.sh 664 18 04-05-2021 n```
 <br />```slot_checker.sh 663 45 05-06-2021 N```
 
+<br />File will be saved with following naming convention - ```<district_id>-<min_age>-<custom_date>.log```
+
 ## Reference:
 https://github.com/faizulhai24/cowin-vaccine-slot-checker
