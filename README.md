@@ -7,13 +7,12 @@ This is a Shell script which will help you to know when a slot is available on C
 
 ## Prerequisites:
 1. Make sure ```jq``` is present in your machine.
+<br />Ubuntu - ```sudo apt install jq -y```
+<br />CentOS - ```sudo yum install jq -y```
 <br />MacOS - ```brew install jq```
 <br />Note: For mac, if installation fails, try these commands -
 <br />```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null```
 <br />```brew install jq```
-
-<br />CentOS - ```sudo yum install jq -y```
-<br />Ubuntu - ```sudo apt install jq -y```
 
 ## Steps to run:
 1. Clone the repository
